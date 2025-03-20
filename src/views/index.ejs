@@ -1,0 +1,226 @@
+<%# 配列データを定義 %>
+<%
+// nav
+const navData = () => ([
+ {
+   title: 'ホーム',
+   link: ""
+ },
+ {
+   title: 'コース紹介',
+   link: ""
+ },
+ {
+   title: '料金プラン',
+   link: "",
+   subLinks: [
+     { title: 'お支払方法', link: "" },
+     { title: '各種クーポンの案内', link: "" }
+   ]
+ },
+ {
+   title: 'レビュー',
+   link: ""
+ },
+ {
+   title: 'Q&A',
+   link: ""
+ },
+ {
+   title: 'お問い合わせ',
+   link: "",
+   subLinks: [
+     { title: '入会ページ', link: "" },
+     { title: '資料請求', link: "" }
+   ]
+ }
+]);
+
+// table
+const tableData = () =>([
+  {
+    id: "yoga", // ID を追加
+    labelledby: "tab-yoga",
+    title: "ヨガ",
+    data: [
+      {
+        category: "プラン",
+        values: ["ライト", "スタンダード", "プレミアム"],
+        thColor: "#F4F4FF",
+      },
+      {
+        category: "料金",
+        values: ["¥5,000", "¥8,000", "¥12,000"],
+        thColor: "#FF9800",
+      },
+      {
+        category: "特典",
+        values: ["初月無料", "ヨガマット貸出無料", "ヨガマット貸出 + パーソナルレッスン月1回"],
+        thColor: "#4CAF50",
+      }
+    ]
+  },
+  {
+    id: "run", // ID を追加
+    labelledby: "tab-run",
+    title: "フィットネスラン",
+    data: [
+      {
+        category: "プラン",
+        values: ["ベーシック", "アドバンス", "プロ"],
+        thColor: "#F4F4FF",
+      },
+      {
+        category: "料金",
+        values: ["¥4,000", "¥9,000", "¥15,000"],
+        thColor: "#FF9800",
+      },
+      {
+        category: "特典",
+        values: ["初月50%オフ", "無料パーソナルトレーニング", "専属トレーナー付き"],
+        thColor: "#4CAF50",
+      }
+    ]
+  },
+  {
+    id: "boxing", // ID を追加
+    labelledby: "tab-boxing",
+    title: "ボクササイズ",
+    data: [
+      {
+        category: "プラン",
+        values: ["スターター", "スタンダード", "プレミアム"],
+        thColor: "#F4F4FF"
+      },
+      {
+        category: "料金",
+        values: ["¥6,000", "¥10,000", "¥18,000"],
+        thColor: "#FF9800"
+      },
+      {
+        category: "特典",
+        values: ["初月20%オフ", "マシン使用無料", "パーソナルトレーニング付き"],
+        thColor: "#4CAF50",
+      }
+    ]
+  }
+]);
+
+
+//accordion
+const accordionData = () => ([
+ { question: "初めてのフィットネスクラブ、注意点は？", answer: "はじめての方も安心して利用していただけるよう、スタッフがしっかりとサポートさせていただきます。器具の使い方や運動メニューのアドバイスなど、ご要望に合わせてご案内いたします。ぜひお気軽にご相談ください。"},
+ { question: "通う頻度はどのくらいが適切ですか?", answer: "無理のない範囲で続けていくことが大切ですね。週に2~3回の頻度をおすすめします。無理のない範囲で続けていくことが大切ですよ。"},
+ { question: " 夏場はどのような服装で来れば良いですか?", answer: "通気性の良いスポーツウェアをおすすめします。Tシャツとショートパンツなどが適しています。汗をかいても快適に過ごせるよう、吸汗速乾素材がおすすめです。また、運動中の安全性を考え、しっかりとした靴底のスニーカーをご着用ください。"},
+ { question: "子連れで利用できますか?", answer: " はい、もちろんご家族でも気軽にご利用いただけます。キッズスペースもご用意しておりますので、お子様も安心して遊べます。スタッフがお子様の見守りもさせていただきますので、ぜひご家族で楽しんでくださいね。"},
+ { question: "会員以外の方も利用できますか?", answer: "はい、会員以外の方でも1日利用券をお求めいただけます。初めての方やご家族、ご友人と一緒にお試しいただくのもおすすめです。スタッフが丁寧にご案内させていただきますので、ぜひお気軽にお立ち寄りください。"},
+])
+
+//trainerCard
+const trainerData = () => ([
+{
+  name: "佐藤千恵子",
+  description: "インド古来のヨガの伝統を学び、その奥深さと精神性を会員の皆さまに丁寧に伝えています。クラスでは柔らかな語りかけと共に、参加者一人ひとりのニーズに寄り添った指導を行っています。",
+  image: "trainer-img1.jpg",
+  alt: "ヨガコースのインストラクター佐藤千恵子講師",
+  bgColor:"#F4F4FF"
+},
+{
+  name: "田中健一",
+  description: " 全日本ボクシング王者の、経歴を持ち、現役引退後はジムでコーチを務める。パンチ力と俊敏性に定評があり、初心者からプロを目指す会員まで幅広いレベルに対応できる指導力を持っています。",
+  image: "trainer-img2.jpg",
+  alt: "ボクササイズコースのインストラクター田中健一講師",
+  bgColor:"#FF9800"
+},
+{
+  name: "鈴木真緒",
+  description: " 陸上競技の日本代表選手出身。スピードと持久力に優れ、効率的なランニングフォームを会員の方々に身につけていただけるよう丁寧に指導しています。",
+  image: "trainer-img3.jpg",
+  alt: "フィットネスランコースのインストラクター鈴木真緒講師",
+  bgColor:"#4CAF50"
+},
+])
+//carouselCard
+const carouselData = () => ([
+{
+  name: "佐藤美奈",
+  description: "ヨガコースに参加しています。インストラクターの指導がとても丁寧で、毎回リフレッシュできます。スタジオの雰囲気も良く、リラックスしてトレーニングできるので大好きです。",
+  image: "card-img1.png",
+  alt: "ヨガコースを体験された女性佐藤美奈さん",
+ },
+{
+  name: "高橋愛子",
+  description: "フィットネスランコースを受講しています。トレーナーがしっかりサポートしてくれるので、モチベーションが続きます。ランニングの後は気分が爽快で、体力もついてきました！",
+  image: "card-img2.png",
+  alt: "フィットネスランコースを体験された高橋愛子さん",
+},
+{
+  name: "鈴木玲子",
+  description: "ボクササイズコースに通っています。高強度のトレーニングがやりがいがあり、毎回全身を使った運動ができるのでとても充実しています。体が引き締まってきて、自信が持てるようになりました。",
+  image: "card-img3.png",
+  alt: "ボクササイズコースを体験された鈴木玲子さん",
+},
+{
+  name: "中村健一",
+  description: "フィットネスランコースでのトレーニングが楽しくて仕方ありません。トレーナーの指導が的確で、自分のペースで無理なくランニングが続けられます。健康維持に役立っています。",
+  image: "card-img4.png",
+  alt: "フィットネスランコースを体験された中村健一さん",
+  },
+{
+  name: "小林翔太",
+  description: "ヨガコースに参加しています。インストラクターがとても親切で、ポーズの正しいやり方を教えてくれるので、初心者でも安心して参加できます。体が柔らかくなってきて、心身共にリフレッシュしています。",
+  image: "card-img5.png",
+  alt: "ヨガコースを体験された小林翔太さん",
+},
+{
+  name: "田中優",
+  description: "ボクササイズコースに参加しています。高強度のトレーニングが気持ちよく、ストレス発散にもなります。全身の筋肉が鍛えられるので、とても満足しています。",
+  image: "card-img6.png",
+  alt: "ボクササイズコースを体験された田中優さん",
+},
+])
+%>
+<%# 配列データを定数に代入 %>
+<% const nav = navData(); %>
+<% const tables = tableData(); %>
+<% const accordion = accordionData(); %>
+<% const trainer = trainerData(); %>
+<% const carousel = carouselData(); %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="「健康＆フィットネス」は、会員一人ひとりに合わせたプログラムと専門家によるサポートで、心身ともに輝くライフスタイルを提供します。最新設備と活気あふれる仲間とともに、無理なく続けられる環境でフィットネスを楽しめます。ぜひ、この機会に「健康＆フィットネス」で美しいカラダと華やかな毎日を手に入れてみてください。">
+    <!-- OGP -->
+    <meta property="og:title" content="健康＆フィットネスクラブ">
+    <meta property="og:description" content="「健康＆フィットネス」は、会員一人ひとりに合わせたプログラムと専門家によるサポートで、心身ともに輝くライフスタイルを提供します。最新設備と活気あふれる仲間とともに、無理なく続けられる環境でフィットネスを楽しめます。ぜひ、この機会に「健康＆フィットネス」で美しいカラダと華やかな毎日を手に入れてみてください。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fitness-website.netlify.app/">
+    <meta property="og:image" content="https://fitness-website.netlify.app/img/OGP.png">
+    <!-- Google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>健康＆フィットネスクラブ</title>
+</head>
+<body>
+  <%- include('./layout/_header.ejs',{ nav:nav }) %>
+  <%- include('./parts/_mv.ejs') %>
+
+  <main class="l-main">
+    <%- include('./sections/_course.ejs',{ trainer:trainer }) %>
+    <%- include('./sections/_trainer.ejs',{ trainer:trainer }) %>
+    <%- include('./sections/_price.ejs',{ tables:tables }) %>
+    <%- include('./sections/_review.ejs',{ carousel:carousel }) %>
+    <%- include('./sections/_faq.ejs',{ accordion:accordion }) %>
+    <%- include('./sections/_contact.ejs') %>
+ </main>
+  <%- include('./layout/_footer.ejs',{ nav:nav }) %>
+
+  <%- include('./parts/_modal.ejs') %>
+  <%- include('./parts/_top-button.ejs') %>
+
+</body>
+</html>

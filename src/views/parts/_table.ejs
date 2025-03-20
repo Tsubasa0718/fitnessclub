@@ -1,0 +1,79 @@
+<!-- tab-btn -->
+<div class="c-tab-btn-body" role="tablist">
+  <div class="c-tab-btn-wrapper">
+    <button
+      type="button"
+      class="c-tab-btn"
+      id="tab-yoga"
+      role="tab"
+      aria-controls="yoga"
+      aria-selected="true"
+      tabindex="0"
+    >
+      <span class="c-tab-btn__image l-sp-only">
+        <img src="/dist/img/yoga-icon.png" alt="ヨガコースのタブボタンのアイコン">
+      </span>
+      <span class="c-tab-btn__text l-pc-only">ヨガコース</span>
+    </button>
+
+    <button
+      type="button"
+      class="c-tab-btn"
+      id="tab-run"
+      role="tab"
+      aria-controls="run"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      <span class="c-tab-btn__image l-sp-only">
+        <img src="/dist/img/runicon.png" alt="フィットネスランコースのタブボタンのアイコン">
+      </span>
+      <span class="c-tab-btn__text l-pc-only">フィットネスランコース</span>
+    </button>
+
+    <button
+      type="button"
+      class="c-tab-btn"
+      id="tab-boxing"
+      role="tab"
+      aria-controls="boxing"
+      aria-selected="false"
+      tabindex="-1"
+    >
+      <span class="c-tab-btn__image l-sp-only">
+        <img src="/dist/img/boxing-icon.png" alt="ボクササイズコースのタブボタンのアイコン">
+      </span>
+      <span class="c-tab-btn__text l-pc-only">ボクササイズコース</span>
+    </button>
+  </div>
+</div>
+
+<!-- table -->
+<div class="p-table-body">
+  <% tables.forEach((table, index) => { %>
+    <div class="p-table-wrapper <%= index === 0 ? 'is-active' : 'is-hidden' %>" role="tabpanel" id="<%= table.id %>" aria-labelledby="<%= table.labelledby %>">
+      <div class="p-table-box">
+        <% table.data.forEach((category) => { %>
+          <table class="p-table">
+            <thead>
+              <tr>
+                <th class="p-table__th"
+                    style="background-color: <%= category.thColor %>;
+                           color: <%= (category.category === '料金' || category.category === '特典') ? '#FFF' : '#000' %>;">
+                  <%= category.category %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% category.values.forEach((value) => { %>
+                <tr>
+                  <td class="p-table__td"><%= value %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% }); %>
+      </div>
+    </div>
+  <% }); %>
+</div>

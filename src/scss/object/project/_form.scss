@@ -1,0 +1,164 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-form-body{
+    margin-top: px-clamp(64,74,375,2000);
+}
+
+.p-form{
+
+&__item{
+  display: flex;
+  flex-direction: column;
+  @include responsive("tablet"){
+    flex-direction: row;
+  }
+ }
+//title
+&__title--first{
+    border-top: none;
+    border-bottom: 1px solid #000;
+}
+&__title{
+  font-weight: bold;
+  padding: px-clamp(16,24,375,2000) 0 px-clamp(16,24,375,2000) px-clamp(16,20,375,2000);
+  background-color: var(--inner-color);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  @include responsive("tablet"){
+    border-right: none;
+   width: 30%;
+  }
+}
+// label
+&__required{
+  margin-left: px-to-rem(20px);
+  font-size: px-to-rem(12px);
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  padding: px-to-rem(4px);
+}
+&__input-box,
+&__select-body,
+&__radio-box,
+&__input-box,
+&__textarea-box{
+    padding: 1rem ;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    @include responsive("tablet"){
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: none;
+        width: 70%;
+       }
+}
+//　テキストボックス・セレクトボックスカスタマイズ
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="post"],
+input[type="city"],
+textarea,
+select{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: px-to-rem(12px) 0 px-to-rem(12px) px-to-rem(12px);
+    border: 1px solid #000;
+    border-radius: px-to-rem(5px);
+    @include responsive("tablet"){
+        width: 70%;
+     }
+}
+// select
+&__selectWrap{
+    position: relative;
+    display: block;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10%;
+      margin: auto;
+      display: block;
+      width: px-to-rem(10px);
+      height:  px-to-rem(10px);
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      transform: rotate(45deg);
+      pointer-events: none;
+      @include responsive("tablet"){
+        right: 35%;
+      }
+    }
+}
+select{
+    cursor: pointer;
+}
+// textarea
+textarea{
+    height: px-to-rem(150px);
+}
+
+// radio-boxカスタマイズ
+&__radio-box{
+    display: flex;
+    padding-left: px-clamp(40,48,375,2000);
+}
+input[type="radio"]{
+ position: absolute;
+ opacity: 0;
+}
+&__radio-item:not(:first-of-type){
+    margin-left: 2rem;
+}
+&__radio{
+    position: relative;
+    cursor: pointer; // カーソルを適用
+    display: inline-block;
+    &::before{
+     content: "";
+     position: absolute;
+     top: 0;
+     left: px-to-rem(-24px);
+     border-radius: 50%;
+     width: px-to-rem(20px);
+     height: px-to-rem(20px);
+     border: 1px solid #000;
+    }
+    &::after{
+     content: "";
+     position: absolute;
+     top: px-to-rem(3.5px);
+     left: px-to-rem(-20.5px);
+     width: px-to-rem(13px);
+     height: px-to-rem(13px);
+     border-radius: 50%;
+     background-color: var(--main-color);
+     transform: scale(0);  // 初期状態では非表示
+    transition: all 0.3s ease;
+    }
+}
+input[type="radio"]:checked + .p-form__radio::after{
+       transform: scale(1);
+}
+/* フォーカス時のスタイル */
+input[type="radio"]:focus + .p-form__radio::before {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* キーボードナビゲーション用 */
+.p-form__radio:focus-within {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+// btn
+&__btn{
+    margin-top: px-clamp(40,64,375,2000);
+    text-align: center;
+}
+}

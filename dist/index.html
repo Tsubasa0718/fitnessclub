@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="「健康＆フィットネス」は、会員一人ひとりに合わせたプログラムと専門家によるサポートで、心身ともに輝くライフスタイルを提供します。最新設備と活気あふれる仲間とともに、無理なく続けられる環境でフィットネスを楽しめます。ぜひ、この機会に「健康＆フィットネス」で美しいカラダと華やかな毎日を手に入れてみてください。">
+<!-- OGP -->
+<meta property="og:title" content="健康＆フィットネスクラブ">
+<meta property="og:description" content="「健康＆フィットネス」は、会員一人ひとりに合わせたプログラムと専門家によるサポートで、心身ともに輝くライフスタイルを提供します。最新設備と活気あふれる仲間とともに、無理なく続けられる環境でフィットネスを楽しめます。ぜひ、この機会に「健康＆フィットネス」で美しいカラダと華やかな毎日を手に入れてみてください。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fitness-website.netlify.app/">
+<meta property="og:image" content="https://fitness-website.netlify.app/img/OGP.png">
+<!-- Google-fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<title>健康＆フィットネスクラブ</title>
+<script defer="defer" src="/bundle.js"></script><link href="/./css/style.css" rel="stylesheet"></head>
+<body>
+<header class="l-header">
+<div class="l-header__wrapper">
+<div class="l-header__inner">
+<!-- hamburger-menu -->
+<button id="js-menu-btn" type="button" class="c-menu-btn l-sp-only" aria-controls="is-nav" aria-expanded="false">
+<span class="c-menu-btn__line"></span>
+<span class="c-menu-btn__line"></span>
+<span class="c-menu-btn__line"></span>
+<span class="c-menu-btn__text">Menu</span>
+</button>
+<!-- logo -->
+<h1 class="l-header__logo">
+<a href="#">
+<picture>
+<source srcset="/9ebbf884acb24a30097b.png" media="(max-width: 650px)">
+<img src="/375480afb7cd9e038894.png" alt="健康＆フィットネスのサイトロゴ">
+</picture>
+</a>
+</h1>
+<!-- info -->
+<div class="l-header__commonWrap">
+<div class="l-header__search-body l-pc-only">
+<form action="#" class="l-header__search">
+<div class="l-header__searchWrap" id="search-wrap" aria-hidden="true" tabindex="-1">
+<button type="button" id="js-search-icon" class="l-header__search-icon" aria-controls="search-wrap" aria-expanded="false"><img width="22" height="23" src="/7ff3b31e8c6b1762a198.png" alt="検索バーのアイコン"></button>
+<input class="l-header__search-bar" type="search" name="query" aria-label="検索">
+<button type="submit" aria-label="検索" class="l-header__search-btn c-btn--search">検索</button>
+</div>
+</form>
+</div>
+<div class="l-header__account-body">
+<div class="l-header__account">
+<a href="#">
+<figure class="l-header__account-image" aria-labelledby="account-text">
+<img width="27" height="27" src="/eee25616d07ef273bccb.png" alt="会員ページへ遷移するアイコン">
+</figure>
+<span id="account-text" class="l-header__account-caption">会員サービス</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav id="is-nav" class="l-nav" aria-hidden="true">
+<ul class="l-nav__list">
+<li class="l-nav__item">
+<!-- subLinksがない場合はそのまま<a>タグを使用 -->
+<a class="l-nav__link" href="">
+ホーム
+</a>
+</li>
+<li class="l-nav__item">
+<!-- subLinksがない場合はそのまま<a>タグを使用 -->
+<a class="l-nav__link" href="">
+コース紹介
+</a>
+</li>
+<li class="l-nav__item" aria-haspopup="true" aria-expanded="false" aria-controls="subitem-2">
+<!-- subLinksがある場合のみ<div>タグでラップ -->
+<div class="l-nav__link-wrapper">
+<a class="l-nav__link" href="">
+料金プラン
+<span class="l-nav__icon l-pc-only"></span>
+</a>
+<span class="c-icon-plus--nav l-sp-only"></span>
+</div>
+<!-- l-nav__inner-listがある場合 -->
+<ul class="l-nav__inner-list" aria-hidden="true" id="subitem-2">
+<li class="l-nav__inner-item">
+<a class="l-nav__inner-link" href="">お支払方法</a>
+</li>
+<li class="l-nav__inner-item">
+<a class="l-nav__inner-link" href="">各種クーポンの案内</a>
+</li>
+</ul>
+</li>
+<li class="l-nav__item">
+<!-- subLinksがない場合はそのまま<a>タグを使用 -->
+<a class="l-nav__link" href="">
+レビュー
+</a>
+</li>
+<li class="l-nav__item">
+<!-- subLinksがない場合はそのまま<a>タグを使用 -->
+<a class="l-nav__link" href="">
+Q&amp;A
+</a>
+</li>
+<li class="l-nav__item" aria-haspopup="true" aria-expanded="false" aria-controls="subitem-5">
+<!-- subLinksがある場合のみ<div>タグでラップ -->
+<div class="l-nav__link-wrapper">
+<a class="l-nav__link" href="">
+お問い合わせ
+<span class="l-nav__icon l-pc-only"></span>
+</a>
+<span class="c-icon-plus--nav l-sp-only"></span>
+</div>
+<!-- l-nav__inner-listがある場合 -->
+<ul class="l-nav__inner-list" aria-hidden="true" id="subitem-5">
+<li class="l-nav__inner-item">
+<a class="l-nav__inner-link" href="">入会ページ</a>
+</li>
+<li class="l-nav__inner-item">
+<a class="l-nav__inner-link" href="">資料請求</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</header>
+<div class="p-mv" role="img"></div>
+<main class="l-main">
+<section class="p-course">
+<h2 class="c-section-title">コース紹介</h2>
+<div class="l-container">
+<!-- Slider main container -->
+<div class="p-swiper-container">
+<div class="swiper">
+<!-- Additional required wrapper -->
+<div class="swiper-wrapper">
+<!-- Slides -->
+<div class="swiper-slide"><img width="1140" height="544" src="/c0f00e780b3bf101a5cc.jpg" alt="ヨガマットの上でヨガをする女性"></div>
+<div class="swiper-slide"><img width="1140" height="544" src="/3f52c75bc0ced44be4bf.jpg" alt="ボクササイズでトレーニングをする男性"></div>
+<div class="swiper-slide"><img width="1140" height="544" src="/3e649285a8ee86a063e9.jpg" alt="ランニングマシーンでランニングをする女性"></div>
+</div>
+<!-- If we need pagination -->
+<div class="swiper-pagination"></div>
+<!-- If we need navigation buttons -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-trainer">
+<h2 class="c-section-title">トレーナー紹介</h2>
+<div class="l-container">
+<div class="p-trainer__card-body">
+<div class="p-trainer__card-wrapper">
+<div class="p-trainer__card">
+<figure class="p-trainer__card-image" tabindex="0" aria-expanded="false">
+<img width="332" height="388" src="/f897fb2f637195139e9e.jpg" alt="ヨガコースのインストラクター佐藤千恵子講師">
+</figure>
+<div class="p-trainer__card-text-body" style="background-color: #F4F4FF;" aria-hidden="true">
+<h3 class="p-trainer__card-name">佐藤千恵子</h3>
+<p class="p-trainer__card-text">
+インド古来のヨガの伝統を学び、その奥深さと精神性を会員の皆さまに丁寧に伝えています。クラスでは柔らかな語りかけと共に、参加者一人ひとりのニーズに寄り添った指導を行っています。
+</p>
+</div>
+</div>
+<div class="p-trainer__card">
+<figure class="p-trainer__card-image" tabindex="0" aria-expanded="false">
+<img width="332" height="388" src="/113caea5c9577caca48d.jpg" alt="ボクササイズコースのインストラクター田中健一講師">
+</figure>
+<div class="p-trainer__card-text-body" style="background-color: #FF9800;" aria-hidden="true">
+<h3 class="p-trainer__card-name">田中健一</h3>
+<p class="p-trainer__card-text">
+全日本ボクシング王者の、経歴を持ち、現役引退後はジムでコーチを務める。パンチ力と俊敏性に定評があり、初心者からプロを目指す会員まで幅広いレベルに対応できる指導力を持っています。
+</p>
+</div>
+</div>
+<div class="p-trainer__card">
+<figure class="p-trainer__card-image" tabindex="0" aria-expanded="false">
+<img width="332" height="388" src="/0bd517a69e990efad2bc.jpg" alt="フィットネスランコースのインストラクター鈴木真緒講師">
+</figure>
+<div class="p-trainer__card-text-body" style="background-color: #4CAF50;" aria-hidden="true">
+<h3 class="p-trainer__card-name">鈴木真緒</h3>
+<p class="p-trainer__card-text">
+陸上競技の日本代表選手出身。スピードと持久力に優れ、効率的なランニングフォームを会員の方々に身につけていただけるよう丁寧に指導しています。
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-price">
+<h2 class="c-section-title">料金プラン</h2>
+<div class="l-container">
+<!-- tab-btn -->
+<div class="c-tab-btn-body" role="tablist">
+<div class="c-tab-btn-wrapper">
+<button type="button" class="c-tab-btn" id="tab-yoga" role="tab" aria-controls="yoga" aria-selected="true" tabindex="0">
+<span class="c-tab-btn__image l-sp-only">
+<img src="/e0bcaaf3e8b66e1b0ebd.png" alt="ヨガコースのタブボタンのアイコン">
+</span>
+<span class="c-tab-btn__text l-pc-only">ヨガコース</span>
+</button>
+<button type="button" class="c-tab-btn" id="tab-run" role="tab" aria-controls="run" aria-selected="false" tabindex="-1">
+<span class="c-tab-btn__image l-sp-only">
+<img src="/82f14b880cc5d9f49a46.png" alt="フィットネスランコースのタブボタンのアイコン">
+</span>
+<span class="c-tab-btn__text l-pc-only">フィットネスランコース</span>
+</button>
+<button type="button" class="c-tab-btn" id="tab-boxing" role="tab" aria-controls="boxing" aria-selected="false" tabindex="-1">
+<span class="c-tab-btn__image l-sp-only">
+<img src="/a8ca19480a2591c44fd5.png" alt="ボクササイズコースのタブボタンのアイコン">
+</span>
+<span class="c-tab-btn__text l-pc-only">ボクササイズコース</span>
+</button>
+</div>
+</div>
+<!-- table -->
+<div class="p-table-body">
+<div class="p-table-wrapper is-active" role="tabpanel" id="yoga" aria-labelledby="tab-yoga">
+<div class="p-table-box">
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #F4F4FF;
+                           color: #000;">
+プラン
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">ライト</td>
+</tr>
+<tr>
+<td class="p-table__td">スタンダード</td>
+</tr>
+<tr>
+<td class="p-table__td">プレミアム</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #FF9800;
+                           color: #FFF;">
+料金
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">¥5,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥8,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥12,000</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #4CAF50;
+                           color: #FFF;">
+特典
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">初月無料</td>
+</tr>
+<tr>
+<td class="p-table__td">ヨガマット貸出無料</td>
+</tr>
+<tr>
+<td class="p-table__td">ヨガマット貸出 + パーソナルレッスン月1回</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="p-table-wrapper is-hidden" role="tabpanel" id="run" aria-labelledby="tab-run">
+<div class="p-table-box">
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #F4F4FF;
+                           color: #000;">
+プラン
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">ベーシック</td>
+</tr>
+<tr>
+<td class="p-table__td">アドバンス</td>
+</tr>
+<tr>
+<td class="p-table__td">プロ</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #FF9800;
+                           color: #FFF;">
+料金
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">¥4,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥9,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥15,000</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #4CAF50;
+                           color: #FFF;">
+特典
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">初月50%オフ</td>
+</tr>
+<tr>
+<td class="p-table__td">無料パーソナルトレーニング</td>
+</tr>
+<tr>
+<td class="p-table__td">専属トレーナー付き</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="p-table-wrapper is-hidden" role="tabpanel" id="boxing" aria-labelledby="tab-boxing">
+<div class="p-table-box">
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #F4F4FF;
+                           color: #000;">
+プラン
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">スターター</td>
+</tr>
+<tr>
+<td class="p-table__td">スタンダード</td>
+</tr>
+<tr>
+<td class="p-table__td">プレミアム</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #FF9800;
+                           color: #FFF;">
+料金
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">¥6,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥10,000</td>
+</tr>
+<tr>
+<td class="p-table__td">¥18,000</td>
+</tr>
+</tbody>
+</table>
+<table class="p-table">
+<thead>
+<tr>
+<th class="p-table__th" style="background-color: #4CAF50;
+                           color: #FFF;">
+特典
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="p-table__td">初月20%オフ</td>
+</tr>
+<tr>
+<td class="p-table__td">マシン使用無料</td>
+</tr>
+<tr>
+<td class="p-table__td">パーソナルトレーニング付き</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-review">
+<h2 class="c-section-title">レビュー</h2>
+<div class="l-container">
+<div class="p-carousel-container">
+<!-- Slider main container -->
+<div id="carousel" class="swiper p-carousel">
+<!-- Additional required wrapper -->
+<div class="swiper-wrapper">
+<!-- Slides -->
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/3a59689cf50f14a69864.png" alt="ヨガコースを体験された女性佐藤美奈さん">
+</figure>
+<h4 class="p-carousel__card-name">佐藤美奈</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+ヨガコースに参加しています。インストラクターの指導がとても丁寧で、毎回リフレッシュできます。スタジオの雰囲気も良く、リラックスしてトレーニングできるので大好きです。
+</p>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/9021dc3b629e18f7f515.png" alt="フィットネスランコースを体験された高橋愛子さん">
+</figure>
+<h4 class="p-carousel__card-name">高橋愛子</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+フィットネスランコースを受講しています。トレーナーがしっかりサポートしてくれるので、モチベーションが続きます。ランニングの後は気分が爽快で、体力もついてきました！
+</p>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/f915a9442499fc2ffe25.png" alt="ボクササイズコースを体験された鈴木玲子さん">
+</figure>
+<h4 class="p-carousel__card-name">鈴木玲子</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+ボクササイズコースに通っています。高強度のトレーニングがやりがいがあり、毎回全身を使った運動ができるのでとても充実しています。体が引き締まってきて、自信が持てるようになりました。
+</p>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/5c716d68374a344bdb8a.png" alt="フィットネスランコースを体験された中村健一さん">
+</figure>
+<h4 class="p-carousel__card-name">中村健一</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+フィットネスランコースでのトレーニングが楽しくて仕方ありません。トレーナーの指導が的確で、自分のペースで無理なくランニングが続けられます。健康維持に役立っています。
+</p>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/83610654b3422d9618d5.png" alt="ヨガコースを体験された小林翔太さん">
+</figure>
+<h4 class="p-carousel__card-name">小林翔太</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+ヨガコースに参加しています。インストラクターがとても親切で、ポーズの正しいやり方を教えてくれるので、初心者でも安心して参加できます。体が柔らかくなってきて、心身共にリフレッシュしています。
+</p>
+</div>
+</div>
+</div>
+<div class="swiper-slide">
+<div class="p-carousel__card">
+<figure class="p-carousel__card-image">
+<img width="145" height="137" src="/b85f437a3d29a24f3c16.png" alt="ボクササイズコースを体験された田中優さん">
+</figure>
+<h4 class="p-carousel__card-name">田中優</h4>
+<figure class="p-carousel__card-image-ranking">
+<img src="/346548528f6fbcec6af1.png" alt="ランクを表した星マーク">
+</figure>
+<div class="p-carousel__text">
+<p>
+ボクササイズコースに参加しています。高強度のトレーニングが気持ちよく、ストレス発散にもなります。全身の筋肉が鍛えられるので、とても満足しています。
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- If we need pagination -->
+<div class="swiper-pagination"></div>
+<!-- If we need navigation buttons -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-faq">
+<h2 class="c-section-title">Q&A</h2>
+<div class="l-container">
+<div class="p-accordion-body">
+<div class="p-accordion">
+<div class="p-accordion__item">
+<button type="button" class="p-accordion__btn" id="accordion-btn-0" tabindex="0" aria-expanded="false" aria-controls="accordion-content-0">
+<span class="p-accordion__btn-wrapper">
+<span class="p-accordion__question-mark">Q</span>
+初めてのフィットネスクラブ、注意点は？
+</span>
+<span class="c-icon-plus--accordion"></span>
+</button>
+<div id="accordion-content-0" class="p-accordion__content" aria-hidden="true" aria-labelledby="accordion-btn-0" aria-live="polite">
+<div class="p-accordion__content-inner">
+<span class="p-accordion__answer-mark">A</span>
+<p class="p-accordion__text">はじめての方も安心して利用していただけるよう、スタッフがしっかりとサポートさせていただきます。器具の使い方や運動メニューのアドバイスなど、ご要望に合わせてご案内いたします。ぜひお気軽にご相談ください。</p>
+</div>
+</div>
+</div>
+<div class="p-accordion__item">
+<button type="button" class="p-accordion__btn" id="accordion-btn-1" tabindex="0" aria-expanded="false" aria-controls="accordion-content-1">
+<span class="p-accordion__btn-wrapper">
+<span class="p-accordion__question-mark">Q</span>
+通う頻度はどのくらいが適切ですか?
+</span>
+<span class="c-icon-plus--accordion"></span>
+</button>
+<div id="accordion-content-1" class="p-accordion__content" aria-hidden="true" aria-labelledby="accordion-btn-1" aria-live="polite">
+<div class="p-accordion__content-inner">
+<span class="p-accordion__answer-mark">A</span>
+<p class="p-accordion__text">無理のない範囲で続けていくことが大切ですね。週に2~3回の頻度をおすすめします。無理のない範囲で続けていくことが大切ですよ。</p>
+</div>
+</div>
+</div>
+<div class="p-accordion__item">
+<button type="button" class="p-accordion__btn" id="accordion-btn-2" tabindex="0" aria-expanded="false" aria-controls="accordion-content-2">
+<span class="p-accordion__btn-wrapper">
+<span class="p-accordion__question-mark">Q</span>
+夏場はどのような服装で来れば良いですか?
+</span>
+<span class="c-icon-plus--accordion"></span>
+</button>
+<div id="accordion-content-2" class="p-accordion__content" aria-hidden="true" aria-labelledby="accordion-btn-2" aria-live="polite">
+<div class="p-accordion__content-inner">
+<span class="p-accordion__answer-mark">A</span>
+<p class="p-accordion__text">通気性の良いスポーツウェアをおすすめします。Tシャツとショートパンツなどが適しています。汗をかいても快適に過ごせるよう、吸汗速乾素材がおすすめです。また、運動中の安全性を考え、しっかりとした靴底のスニーカーをご着用ください。</p>
+</div>
+</div>
+</div>
+<div class="p-accordion__item">
+<button type="button" class="p-accordion__btn" id="accordion-btn-3" tabindex="0" aria-expanded="false" aria-controls="accordion-content-3">
+<span class="p-accordion__btn-wrapper">
+<span class="p-accordion__question-mark">Q</span>
+子連れで利用できますか?
+</span>
+<span class="c-icon-plus--accordion"></span>
+</button>
+<div id="accordion-content-3" class="p-accordion__content" aria-hidden="true" aria-labelledby="accordion-btn-3" aria-live="polite">
+<div class="p-accordion__content-inner">
+<span class="p-accordion__answer-mark">A</span>
+<p class="p-accordion__text">はい、もちろんご家族でも気軽にご利用いただけます。キッズスペースもご用意しておりますので、お子様も安心して遊べます。スタッフがお子様の見守りもさせていただきますので、ぜひご家族で楽しんでくださいね。</p>
+</div>
+</div>
+</div>
+<div class="p-accordion__item">
+<button type="button" class="p-accordion__btn" id="accordion-btn-4" tabindex="0" aria-expanded="false" aria-controls="accordion-content-4">
+<span class="p-accordion__btn-wrapper">
+<span class="p-accordion__question-mark">Q</span>
+会員以外の方も利用できますか?
+</span>
+<span class="c-icon-plus--accordion"></span>
+</button>
+<div id="accordion-content-4" class="p-accordion__content" aria-hidden="true" aria-labelledby="accordion-btn-4" aria-live="polite">
+<div class="p-accordion__content-inner">
+<span class="p-accordion__answer-mark">A</span>
+<p class="p-accordion__text">はい、会員以外の方でも1日利用券をお求めいただけます。初めての方やご家族、ご友人と一緒にお試しいただくのもおすすめです。スタッフが丁寧にご案内させていただきますので、ぜひお気軽にお立ち寄りください。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="p-contact">
+<h2 class="c-section-title">お問い合わせフォーム</h2>
+<div class="l-container">
+<div class="p-form-body">
+<form id="js-form" action="#" class="p-form" novalidate>
+<div class="p-form__item">
+<label for="name" class="p-form__title p-form__title--first">
+お名前
+<span class="p-form__required">必須</span></label>
+<div class="p-form__input-box">
+<input type="text" name="name" id="name" class="p-form__input" placeholder="山田太郎" aria-describedby="error-name" required>
+<span id="error-name" aria-live="assertive"></span>
+</div>
+</div>
+<div class="p-form__item">
+<label for="email" class="p-form__title">
+メールアドレス
+<span class="p-form__required">必須</span></label>
+<div class="p-form__input-box">
+<input type="email" name="email" id="email" class="p-form__input" placeholder="example@email.com" aria-describedby="error-email" required>
+<span id="error-email" aria-live="assertive"></span>
+</div>
+</div>
+<div class="p-form__item">
+<label for="tel" class="p-form__title">
+電話番号
+<span class="p-form__required">必須</span></label>
+<div class="p-form__input-box">
+<input type="tel" name="tel" id="tel" class="p-form__input" placeholder="090-1234-5678" aria-describedby="error-tel" required>
+<span id="error-tel" aria-live="assertive"></span>
+</div>
+</div>
+<div class="p-form__item">
+<label class="p-form__title">会員種別</label>
+<div class="p-form__radio-box">
+<div class="p-form__radio-item">
+<input type="radio" id="member" name="user_type" value="member">
+<label class="p-form__radio" for="member">会員</label>
+</div>
+<div class="p-form__radio-item">
+<input type="radio" id="general" name="user_type" value="general">
+<label class="p-form__radio" for="general">一般</label>
+</div>
+</div>
+</div>
+<div class="p-form__item">
+<label for="post" class="p-form__title">郵便番号</label>
+<div class="p-form__input-box">
+<input type="text" name="post" id="post" class="p-form__input" placeholder="123-4567">
+</div>
+</div>
+<div class="p-form__item">
+<label for="select" class="p-form__title">住所(都道府県)</label>
+<div class="p-form__select-body">
+<div class="p-form__selectWrap">
+<select name="select" id="select">
+<option value="">選択してください</option>
+</select>
+</div>
+</div>
+</div>
+<div class="p-form__item">
+<label for="city" class="p-form__title">市区町村</label>
+<div class="p-form__input-box">
+<input type="text" name="city" id="city" class="p-form__input" placeholder="かがみ市 光ヶ丘町1丁目">
+</div>
+</div>
+<div class="p-form__item">
+<label for="comment" class="p-form__title">お問い合わせ内容</label>
+<div class="p-form__textarea-box">
+<textarea name="comment" id="comment" class="p-form__input" placeholder="お問い合わせ内容を記入してください"></textarea>
+</div>
+</div>
+<div class="p-form__btn">
+<button type="submit" class="c-btn--submit">送信する</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="l-footer">
+<div class="l-container">
+<div class="l-footer__wrapper">
+<div class="l-footer__logo">
+<a href="#">
+<picture>
+<source srcset="/f304d93f4c4963dba4cb.png" media="(max-width:768px)">
+<img src="/d08321fd6336986fda1c.png" alt="健康＆フィットネスのフッターのロゴ">
+</picture>
+</a>
+</div>
+<div class="l-footer__info">
+<address class="l-footer__tel">電話番号：000-000-000</address>
+</div>
+</div>
+<div class="l-footer__nav" role="navigation">
+<ul class="l-footer__nav-list">
+<li class="l-footer__nav-item"><a href="">ホーム</a></li>
+<li class="l-footer__nav-item"><a href="">コース紹介</a></li>
+<li class="l-footer__nav-item"><a href="">料金プラン</a></li>
+<li class="l-footer__nav-item"><a href="">レビュー</a></li>
+<li class="l-footer__nav-item"><a href="">Q&amp;A</a></li>
+<li class="l-footer__nav-item"><a href="">お問い合わせ</a></li>
+</ul>
+</div>
+<div class="l-footer__copy">
+<small>©健康＆フィットネスクラブ</small>
+</div>
+</div>
+</footer>
+<div id="js-modal" class="c-modal" aria-hidden="true" role="dialog">
+<div class="c-modal__content" role="document">
+<a href="#" class="c-modal__link">
+<figure class="c-modal__image">
+<picture>
+<source srcset="/9c7c163e03b0b1540cd0.jpg" media="(max-width:768px)">
+<img src="/98e853e2717f52b0f3f0.jpg" alt="健康＆フィットネスの広告バナー">
+</picture>
+</figure>
+</a>
+<button id="js-modal-close" class="c-modal__close-btn" type="button" aria-label="モーダルを閉じる">
+<img width="50" height="50" src="/5425f1d2e5e7f05558ed.png" alt="広告バナーを閉じるボタン">
+</button>
+</div>
+</div>
+<a href="#" class="c-top-btn">
+TOP
+</a>
+</body>
+</html>

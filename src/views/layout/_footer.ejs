@@ -1,0 +1,27 @@
+<footer class="l-footer">
+    <div class="l-container">
+        <div class="l-footer__wrapper">
+            <div class="l-footer__logo">
+                <a href="#">
+                    <picture>
+                        <source srcset="/dist/img/footer-logo-sp.png" media="(max-width:768px)">
+                        <img src="/dist/img/footer-logo.png" alt="健康＆フィットネスのフッターのロゴ">
+                    </picture>
+                </a>
+            </div>
+            <div class="l-footer__info">
+                <address class="l-footer__tel">電話番号：000-000-000</address>
+            </div>
+        </div>
+        <div class="l-footer__nav" role="navigation">
+            <ul class="l-footer__nav-list">
+                <% nav.forEach((item)=>{ %>
+                  <li class="l-footer__nav-item"><a href="<%= item.link %>"><%= item.title %></a></li>
+               <% }) %>
+            </ul>
+        </div>
+        <div class="l-footer__copy">
+            <small>©健康＆フィットネスクラブ</small>
+        </div>
+    </div>
+</footer>

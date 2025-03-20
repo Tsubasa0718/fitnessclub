@@ -1,0 +1,89 @@
+@use "../../foundation/_mixin.scss" as *;
+.p-trainer{
+  &__card-body{
+    margin-top: px-to-rem(72px);
+    @include responsive("tablet"){
+        margin-top: px-to-rem(54px);
+    }
+  }
+  &__card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    row-gap: px-to-rem(40px);
+   @include responsive("phone") {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 0;
+      column-gap: px-to-rem(40px);
+    }
+
+   @include responsive("desktop") {
+      grid-template-columns: repeat(3, 1fr); // 重複を避けてここで設定
+    }
+  }
+
+&__card:nth-child(2),
+&__card:nth-child(3){
+  .p-trainer__card-name,
+  .p-trainer__card-text{
+    color: var(--base-color);
+  }
+}
+&__card-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: px-to-rem(250px);
+  height: px-to-rem(290px);
+  margin: 0 auto;
+  object-fit: cover;
+  cursor: pointer;
+  @include responsive("phone"){
+    width: unset;
+    height: unset;
+    margin: unset;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    @include responsive("phone"){
+      width: unset;
+      height: unset;
+    }
+  }
+}
+&__card-name{
+ font-size: px-to-rem(20px);
+ text-align: center;
+}
+
+&__card-text-body{
+  position: relative;
+  top: px-to-rem(-72px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: px-clamp(220,265,375,2000);
+  padding: 1.5rem;
+  border-radius: px-to-rem(20px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+  @include responsive("tablet"){
+    height: px-to-rem(285px);
+  }
+  &[aria-hidden="false"]{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+&__card-name{
+  font-size: px-clamp(16,20,375,2000);
+  font-weight: 700;
+}
+&__card-text{
+    margin-top: 1rem;
+    font-size: px-clamp(14,16,375,2000);
+    line-height: 1.5;
+}
+}

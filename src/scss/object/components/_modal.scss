@@ -1,0 +1,56 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.c-modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+    &__content {
+        position: absolute;
+        top: px-clamp(100, 200, 375, 2000);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__image {
+        position: relative;
+        width: px-to-rem(300px);
+        height: px-to-rem(200px);
+        object-fit: cover;
+
+        @include responsive("phone"){
+            width: px-to-rem(400px);
+            height: px-to-rem(300px);
+        }
+        @include responsive("tablet"){
+            width: unset;
+            height: unset;
+            object-fit: unset;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            @include responsive("tablet"){
+                width: unset;
+                height: unset;
+             }
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: -5%;
+        right: -5%;
+        width: px-clamp(30, 50, 375, 1360);
+        height: px-clamp(30, 50, 375, 1360);
+        cursor: pointer;
+    }
+}

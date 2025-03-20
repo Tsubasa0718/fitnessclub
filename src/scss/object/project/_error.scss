@@ -1,0 +1,7 @@
+@use"../../foundation/_mixin.scss" as *;
+.p-error{
+    display: block;
+    font-size: px-clamp(14,16,375,2000);
+    font-weight: 500;
+    color: var(--alert-color);
+}

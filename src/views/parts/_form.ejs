@@ -1,0 +1,83 @@
+<div class="p-form-body">
+  <form id="js-form" action="#" class="p-form" novalidate>
+      <div class="p-form__item">
+          <label for="name" class="p-form__title p-form__title--first">
+           お名前
+          <span class="p-form__required">必須</span></label>
+        <div class="p-form__input-box">
+          <input type="text" name="name" id="name" class="p-form__input" placeholder="山田太郎" aria-describedby="error-name" required>
+          <span id="error-name" aria-live="assertive"></span>
+        </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="email" class="p-form__title">
+           メールアドレス
+          <span class="p-form__required">必須</span></label>
+        <div class="p-form__input-box">
+          <input type="email" name="email" id="email" class="p-form__input" placeholder="example@email.com" aria-describedby="error-email" required>
+          <span id="error-email" aria-live="assertive"></span>
+        </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="tel" class="p-form__title">
+           電話番号
+          <span class="p-form__required">必須</span></label>
+         <div class="p-form__input-box">
+          <input type="tel" name="tel" id="tel" class="p-form__input" placeholder="090-1234-5678" aria-describedby="error-tel" required>
+          <span id="error-tel" aria-live="assertive"></span>
+         </div>
+      </div>
+
+      <div class="p-form__item">
+          <label class="p-form__title">会員種別</label>
+          <div class="p-form__radio-box">
+              <div class="p-form__radio-item">
+                  <input type="radio" id="member" name="user_type" value="member">
+                  <label class="p-form__radio" for="member">会員</label>
+              </div>
+              <div class="p-form__radio-item">
+                  <input type="radio" id="general" name="user_type" value="general">
+                  <label class="p-form__radio" for="general">一般</label>
+              </div>
+          </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="post" class="p-form__title">郵便番号</label>
+          <div class="p-form__input-box">
+              <input type="text" name="post" id="post" class="p-form__input" placeholder="123-4567">
+          </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="select" class="p-form__title">住所(都道府県)</label>
+          <div class="p-form__select-body">
+              <div class="p-form__selectWrap">
+                  <select name="select" id="select">
+                      <option value="">選択してください</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="city" class="p-form__title">市区町村</label>
+          <div class="p-form__input-box">
+              <input type="text" name="city" id="city" class="p-form__input" placeholder="かがみ市 光ヶ丘町1丁目">
+          </div>
+      </div>
+
+      <div class="p-form__item">
+          <label for="comment" class="p-form__title">お問い合わせ内容</label>
+          <div class="p-form__textarea-box">
+              <textarea name="comment" id="comment" class="p-form__input" placeholder="お問い合わせ内容を記入してください"></textarea>
+          </div>
+      </div>
+
+      <div class="p-form__btn">
+          <button type="submit" class="c-btn--submit">送信する</button>
+      </div>
+  </form>
+</div>

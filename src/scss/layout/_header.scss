@@ -1,0 +1,89 @@
+@use "../foundation/_mixin.scss" as *;
+
+.l-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--base-color);
+  @include responsive("tablet"){
+    all: unset;
+  }
+  &__wrapper{
+    padding: px-clamp(13,16,375,2000) 0;
+  }
+  &__inner{
+    max-width: px-to-rem(1140px);
+    margin: 0 auto;
+    padding: 0 px-to-rem(20px);
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    @include responsive("tablet"){
+      max-width: unset; // 無効化
+      margin: unset; // 無効化
+      padding: unset; // 無効化
+      justify-content: space-between;
+    }
+  }
+  //
+  &__logo{
+     @include responsive("tablet"){
+      margin-left: px-to-rem(48px);
+    }
+  }
+  &__commonWrap{
+    @include responsive("tablet"){
+     display: flex;
+     align-items: center;
+    }
+  }
+ // 検索バー
+ &__search-body{
+   margin-right: px-to-rem(32px);
+ }
+ &__search{
+   overflow: hidden;
+  }
+ &__searchWrap{
+  transform: translateX(200px);
+  transition: transform .3s;
+  &[aria-hidden="false"]{
+    transform: translateX(0px);
+  }
+  }
+ &__search-icon{
+  cursor: pointer;
+  margin-right: px-to-rem(8px);
+  }
+ &__search-bar{
+  width: px-to-rem(130px);
+  border-bottom: 1px solid #000;
+}
+ &__search-btn{
+
+ }
+ //  会員ページ
+ &__account-body{
+   @include responsive("tablet"){
+    padding: 0 px-to-rem(20px);
+  }
+  }
+  &__account-image{
+    width: px-clamp(20,30,375,2000);
+    height: px-clamp(20,30,375,2000);
+    margin-left: px-to-rem(20px);
+   img{
+        width: 100%;
+        height: 100%;
+      }
+  }
+  &__account-caption{
+     font-size: px-clamp(10,12,375,2000);
+     font-weight: 600;
+     margin-top: px-to-rem(5px);
+     white-space: nowrap;
+ }
+}

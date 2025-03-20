@@ -1,0 +1,151 @@
+@use "../foundation/_mixin.scss" as *;
+
+.l-nav{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:  px-clamp(60,80,375,997);
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+  background-color: var(--base-color);
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+ @include responsive("tablet"){
+   position: unset;
+   width: unset;
+   height: unset;
+   top: unset;
+   left: unset;
+   transform: unset;
+   background-color: unset;
+   border-top: 1px solid #000;
+   visibility: visible;
+   opacity: 1;
+  }
+
+&__list{
+   @include responsive("tablet"){
+      margin: 1.5rem;
+      display: flex;
+      justify-content: center;
+  }
+}
+
+&__item{
+   white-space: nowrap;
+   background-color: var(--base-color);
+   cursor: pointer;
+   transition: .3s;
+}
+
+&__link-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include responsive("tablet"){
+    display: unset;
+    align-items: unset;
+    justify-content: unset;
+  }
+}
+
+&__link{
+    display: inline-block;
+    padding: px-to-rem(12px) 0 px-to-rem(12px) px-to-rem(12px);
+    position: relative;
+    @include responsive("tablet"){
+      padding: 0 px-to-rem(50px);
+      border-right: 1px solid #000;
+      &::after{
+         position: absolute;
+         left: 25%;
+         content: "";
+         width: 50%;
+         height: px-to-rem(2px);
+         background-color: var(--main-color);
+         bottom: px-to-rem(-3px);
+         transform: scale(0, 1);
+         transform-origin: left top;
+         transition: transform .3s;
+      }
+      &:hover{
+        .l-nav__icon{
+         background-color: var(--main-color);
+        }
+      }
+      &:hover::after{
+         transform: scale(1, 1);
+      }
+    }
+ }
+//  icon
+&__icon{
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: px-to-rem(9px);
+  height: px-to-rem(7px);
+  background-color: #000;
+  clip-path: polygon(0 0, 100% 0%, 50% 100%);
+  transition: .3s;
+}
+&__inner-list{
+    background-color: var(--inner-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    @include responsive("tablet"){
+      max-height: none; /* 元の高さにリセット */
+      overflow: visible; /* 隠れていたものを表示 */
+      visibility: hidden;
+      opacity: 0;
+      position: relative;
+      top: 1rem;
+      padding: px-to-rem(20px);
+      white-space: nowrap;
+      border: unset;
+      background-color: var(--base-color);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: opacity .3s;
+    }
+ }
+ &__inner-link:first-of-type{
+    padding-bottom: px-to-rem(16px);
+ }
+ &__inner-link{
+  display: inline-block;
+  padding: px-to-rem(8px) 0  px-to-rem(8px)  px-to-rem(8px);
+  @include responsive("tablet"){
+   padding: 0;
+   text-align: center;
+  }
+}
+ &__inner-link:last-of-type{
+  display: inline-block;
+  padding-bottom: px-to-rem(8px);
+  @include responsive("tablet"){
+   padding: px-to-rem(8px) 0 0 0;
+   text-align: center;
+  }
+}
+}
+// アニメーション
+
+// nav表示
+.l-nav[aria-hidden="false"]{
+  visibility: visible;
+  opacity: 1;
+}
+.l-nav__item:hover > .l-nav__inner-list,
+.l-nav__item:focus-within > .l-nav__inner-list {
+ @include responsive("tablet"){
+  visibility: visible;
+  opacity: 1;
+ }
+}
+
+

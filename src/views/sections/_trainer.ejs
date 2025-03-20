@@ -1,0 +1,22 @@
+<section class="p-trainer">
+    <h2 class="c-section-title">トレーナー紹介</h2>
+    <div class="l-container">
+     <div class="p-trainer__card-body">
+        <div class="p-trainer__card-wrapper">
+            <% trainer.forEach((item)=>{ %>
+             <div class="p-trainer__card">
+                <figure class="p-trainer__card-image" tabindex="0"  aria-expanded="false">
+                    <img width="332" height="388" src="/dist/img/<%= item.image %>" alt="<%= item.alt %>">
+                </figure>
+                <div class="p-trainer__card-text-body" style="background-color: <%= item.bgColor %>;" aria-hidden="true">
+                    <h3 class="p-trainer__card-name"><%= item.name %></h3>
+                    <p class="p-trainer__card-text">
+                        <%= item.description %>
+                    </p>
+                </div>
+             </div>
+           <% }) %>
+        </div>
+     </div>
+    </div>
+</section>

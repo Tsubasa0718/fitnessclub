@@ -1,0 +1,60 @@
+@use"../../foundation/_mixin.scss" as *;
+
+.p-accordion-body {
+  margin-top: px-to-rem(64px);
+}
+
+.p-accordion {
+  &__item {
+    border-bottom: 1px solid #B7B7B7;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: px-clamp(14,16,375,2000);
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+
+  &__item:nth-child(n+2) { // 2番目以降の項目に適用
+    .p-accordion__btn {
+      padding-top: 1rem;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  &__content-inner {
+    display: flex;
+    align-items: center; // 上揃えにする
+    gap: px-to-rem(12px); // 「A」とテキストの間隔を調整
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+   font-size: px-clamp(14,16,375,2000);
+  }
+
+  &__question-mark,
+  &__answer-mark {
+    font-size: px-clamp(16,24,375,2000);
+    font-weight: bold;
+    margin-right: px-clamp(8,24,375,2000);
+  }
+
+  &__answer-mark {
+    flex-shrink: 0; // 「A」のマークのサイズを固定
+    padding: 1rem 0;
+    color: var(--main-color);
+  }
+
+  &__question-mark {
+    color: var(--accent-color);
+  }
+}

@@ -1,0 +1,64 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-carousel-container{
+ margin-top: px-clamp(56,80,375,2000);
+}
+.p-carousel{
+// btn
+ // デフォルトの矢印を消す
+ .swiper-button-prev,
+ .swiper-button-next{
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background-color: transparent; /* 背景色を透明にする */
+     border: none; /* 枠線を削除 */
+     border-radius: 50%;
+     cursor: pointer;
+     width: px-clamp(30, 90, 375, 1360); /* ボタンの幅 */
+     height: px-clamp(30, 90, 375, 1360); /* ボタンの高さ */
+  &::after {
+     content: ''; /* 擬似要素の内容を空にする */
+      display: none;
+   }
+ }
+ // prev
+ .swiper-button-prev{
+    background-image: url(/dist/img/carousel-btn-prev.png);
+    background-size: contain; /* アイコンのサイズを調整 */
+    background-repeat: no-repeat;
+    background-position: center; /* アイコンを中央に配置 */
+}
+// next
+.swiper-button-next{
+    background-image: url(/dist/img/carousel-btn-next.png);
+    background-size: contain; /* アイコンのサイズを調整 */
+    background-repeat: no-repeat;
+    background-position: center; /* アイコンを中央に配置 */
+ }
+
+ // card
+ &__card{
+   padding: 1rem px-to-rem(56px) 0 px-to-rem(56px);
+   width: px-to-rem(362px);
+   height: px-to-rem(472px);
+   border-radius: px-to-rem(30px);
+   background-color: var(--base-color);
+   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
+ }
+ &__card-name{
+    margin: 1rem 0;
+    font-size: px-to-rem(20px);
+    text-align: center;
+ }
+ &__card-image,
+ &__card-image-ranking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ &__text{
+    margin-top: 1.5rem;
+    line-height: 1.5;
+ }
+}

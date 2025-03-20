@@ -1,0 +1,143 @@
+@use "../../foundation/_mixin.scss" as *;
+
+// menu-btn
+.c-menu-btn{
+  width: px-to-rem(40px);
+  height: px-to-rem(40px);
+  background-color: var(--base-color);
+  position: relative;
+  z-index: 2;
+
+  &__line{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    width: 1.5rem;
+    height: px-to-rem(1px);
+    background-color: #000;
+    transition: .3s;
+  &:nth-child(1){
+    top: calc(40% - 8px);
+  }
+  &:nth-child(3){
+    top: calc(40% + 8px);
+  }
+}
+  &__text{
+    position: absolute;
+    left: 50%;
+    bottom: px-to-rem(1px);
+    transform: translateX(-50%);
+    font-size: px-to-rem(10px);
+  }
+}
+// animation
+.c-menu-btn[aria-expanded = "true"]{
+  .c-menu-btn__line:nth-child(1){
+    top: 40%;
+    transform:  translate(-50%,-40%)  rotate(45deg);
+  }
+  .c-menu-btn__line:nth-child(2){
+    opacity: 0;
+  }
+  .c-menu-btn__line:nth-child(3){
+    top: 40%;
+    transform:  translate(-50%,-40%) rotate(-45deg);
+  }
+}
+
+// 検索ボタン
+.c-btn--search{
+  display: inline-block;
+  text-align: center;
+  margin-left: px-to-rem(8px);
+  padding: px-to-rem(5px) 0;
+  width: px-to-rem(48px);
+  font-size: px-to-rem(12px);
+  background-color: #000;
+  color: var(--base-color);
+}
+
+// tab-btn
+.c-tab-btn-body{
+  margin-top: px-clamp(40,80,375,2000);
+}
+
+.c-tab-btn-wrapper{
+ display: flex;
+ justify-content: center;
+ align-items: stretch;
+}
+
+.c-tab-btn{
+ white-space: nowrap;
+ padding: px-clamp(5,20,375,2000) px-to-rem(20px);
+ width: px-clamp(95,350,375,2000);
+ text-align: center;
+ box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+ transform: .5s;
+ &:hover{
+  top: px-to-rem(4px);
+  box-shadow: none;
+ }
+
+//  icon
+&__image{
+  display: flex;
+  justify-content: center;
+}
+// text
+&__text{
+  font-size: px-clamp(15,18,992,2000);
+  font-weight: 500;
+}
+}
+.c-tab-btn:not(:first-of-type){
+  margin-left: 1rem;
+}
+.c-tab-btn:nth-child(1){
+  background-color: var(--yoga-color);
+}
+.c-tab-btn:nth-child(2){
+  background-color: var(--main-color);
+
+}
+.c-tab-btn:nth-child(3){
+  background-color: var(--accent-color);
+}
+
+.c-tab-btn:nth-child(2),
+.c-tab-btn:nth-child(3){
+  .c-tab-btn__text{
+    color: var(--base-color);
+  }
+}
+
+// form
+.c-btn--submit{
+  display: inline-block;
+  padding: px-to-rem(24px) 0;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  width: px-clamp(249,355,375,2000);
+
+}
+
+// top-btn
+.c-top-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: px-to-rem(20px);
+  bottom: px-to-rem(100px);
+  z-index: 3;
+  font-size: px-to-rem(12px);
+  width: px-clamp(50,100,375,2000);
+  height: px-clamp(50,100,375,2000);
+  color: var(--base-color);
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+

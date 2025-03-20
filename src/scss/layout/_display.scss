@@ -1,0 +1,13 @@
+@use "../foundation/_responsive.scss" as *;
+.l-sp-only{
+  display: block;
+  @include responsive("tablet"){
+    display: none;
+  }
+}
+.l-pc-only{
+  display: none;
+  @include responsive("tablet"){
+    display: block;
+  }
+}

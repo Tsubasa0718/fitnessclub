@@ -1,0 +1,86 @@
+<header class="l-header">
+  <div class="l-header__wrapper">
+    <div class="l-header__inner">
+         <!-- hamburger-menu -->
+        <button id="js-menu-btn" type="button" class="c-menu-btn l-sp-only" aria-controls="is-nav" aria-expanded="false">
+          <span class="c-menu-btn__line"></span>
+          <span class="c-menu-btn__line"></span>
+          <span class="c-menu-btn__line"></span>
+          <span class="c-menu-btn__text">Menu</span>
+        </button>
+     <!-- logo -->
+     <h1 class="l-header__logo">
+       <a href="#">
+         <picture>
+           <source srcset="/dist/img/logo-sp.png" media="(max-width: 650px)">
+           <img src="/dist/img/logo.png" alt="健康＆フィットネスのサイトロゴ">
+          </picture>
+        </a>
+      </h1>
+      <!-- info -->
+      <div class="l-header__commonWrap">
+        <div class="l-header__search-body l-pc-only">
+            <form action="#" class="l-header__search">
+                <div class="l-header__searchWrap" id="search-wrap" aria-hidden="true" tabindex="-1">
+                    <button type="button" id="js-search-icon" class="l-header__search-icon" aria-controls="search-wrap" aria-expanded="false"><img width="22" height="23" src="/dist/img/serch-icon.png" alt="検索バーのアイコン"></button>
+                     <input class="l-header__search-bar" type="search" name="query"aria-label="検索">
+                     <button type="submit" aria-label="検索"  class="l-header__search-btn c-btn--search">検索</button>
+                </div>
+            </form>
+        </div>
+        <div class="l-header__account-body">
+          <div class="l-header__account">
+            <a href="#">
+              <figure class="l-header__account-image" aria-labelledby="account-text">
+                <img width="27" height="27" src="/dist/img/account-icon.png" alt="会員ページへ遷移するアイコン">
+            </figure>
+            <span id="account-text" class="l-header__account-caption">会員サービス</span>
+
+            </a>
+          </div>
+        </div>
+     </div>
+
+    </div>
+  </div>
+  <nav id="is-nav" class="l-nav" aria-hidden="true">
+    <ul class="l-nav__list">
+      <% nav.forEach((item, index) => { %>
+        <li class="l-nav__item"
+          <% if (item.subLinks) { %>
+            aria-haspopup="true" aria-expanded="false"
+            aria-controls="subitem-<%= index %>"
+          <% } %>>
+          <% if (item.subLinks) { %>
+            <!-- subLinksがある場合のみ<div>タグでラップ -->
+            <div class="l-nav__link-wrapper">
+              <a class="l-nav__link" href="<%= item.link %>">
+                <%= item.title %>
+                <span class="l-nav__icon l-pc-only"></span>
+              </a>
+              <span class="c-icon-plus--nav l-sp-only"></span>
+            </div>
+          <% } else { %>
+            <!-- subLinksがない場合はそのまま<a>タグを使用 -->
+            <a class="l-nav__link" href="<%= item.link %>">
+              <%= item.title %>
+            </a>
+          <% } %>
+
+          <% if (item.subLinks) { %>
+            <!-- l-nav__inner-listがある場合 -->
+            <ul class="l-nav__inner-list" aria-hidden="true" id="subitem-<%= index %>">
+              <% item.subLinks.forEach((subLink) => { %>
+                <li class="l-nav__inner-item">
+                  <a class="l-nav__inner-link" href="<%= subLink.link %>"><%= subLink.title %></a>
+                </li>
+              <% }); %>
+            </ul>
+          <% } %>
+        </li>
+      <% }); %>
+    </ul>
+  </nav>
+
+
+ </header>

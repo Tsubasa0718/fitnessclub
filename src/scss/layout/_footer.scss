@@ -1,0 +1,43 @@
+@use "../foundation/_mixin.scss" as *;
+.l-footer{
+    position: relative;
+    background-image: url(/dist/img/footer-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: px-clamp(358,408,375,2000);
+  &__wrapper{
+    padding-top: 1.5rem;
+    text-align: center;
+    @include responsive("tablet"){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: unset;
+    }
+  }
+  &__info{
+    margin-top: 1rem;
+  }
+  &__nav-list{
+    margin-top: px-clamp(40,56,375,2000);
+    @include responsive("tablet"){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__nav-item:not(:first-of-type){
+    margin-top: px-to-rem(8px);
+    @include responsive("tablet"){
+       margin: 0 0 0 1.5rem;
+      }
+  }
+  &__copy{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+
+  }
+}

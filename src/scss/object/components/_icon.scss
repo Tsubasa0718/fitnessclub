@@ -1,0 +1,35 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.c-icon-plus--nav{
+  position: relative;
+  margin-right: 1rem;
+  display: inline-block; /* 幅と高さを適用可能にする */
+  vertical-align: middle;
+  color: var(--accent-color);
+  line-height: 1;
+  width: 1em;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0.1em;
+  transition: .3s;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    transform: rotate(90deg);
+  }
+  &.active::before{
+    width: 0;
+    height: 0;
+  }
+}
+
+.c-icon-plus--accordion{
+ @extend .c-icon-plus--nav;
+ color: #000;
+}

@@ -1,0 +1,35 @@
+<div class="p-carousel-container">
+       <!-- Slider main container -->
+   <div id="carousel" class="swiper p-carousel">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <% carousel.forEach((item) => { %>
+        <div class="swiper-slide">
+            <div class="p-carousel__card">
+                <figure class="p-carousel__card-image">
+                    <img width="145" height="137" src="/dist/img/<%= item.image %>" alt="<%= item.alt %>">
+                </figure>
+                <h4 class="p-carousel__card-name"><%= item.name %></h4>
+                <figure class="p-carousel__card-image-ranking">
+                    <img src="/dist/img/ranking.png" alt="ランクを表した星マーク">
+                </figure>
+                <div class="p-carousel__text">
+                    <p>
+                        <%= item.description %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+</div>

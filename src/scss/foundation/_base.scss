@@ -1,0 +1,36 @@
+@use"./_mixin.scss" as *;
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 100%;
+    font-family: "Noto Sans JP", "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    line-height: 1.2;
+    @include responsive("tablet"){
+        line-height: 1.5;
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+ padding: px-clamp(64,96,375,2000) 0;
+}
+
+:root{
+    --main-color: #FF9800;
+    --accent-color: #4CAF50;
+    --yoga-color: #F4F4FF;
+    --base-color:#FFFF;
+    --inner-color: #F8DEB7;
+    --alert-color: red;
+}

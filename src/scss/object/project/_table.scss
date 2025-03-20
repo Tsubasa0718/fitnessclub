@@ -1,0 +1,59 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-table-body{
+    margin-top: px-clamp(46,64,375,2000);
+}
+// 表示/表示
+.p-table-wrapper.is-hidden {
+    display: none;
+   }
+
+  .p-table-wrapper.is-active {
+    display: block;
+    animation: fadeSlideIn 0.3s ease-out;
+  }
+  // animation
+  @keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.p-table-box{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: stretch;
+    gap: 1rem;
+
+    @include responsive("tablet"){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include responsive("desktop"){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+.p-table{
+   width: 100%;
+   border-collapse: collapse;
+
+   &__th,
+   &__td{
+    padding: px-clamp(8,16,375,200) 0;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: px-clamp(14,16,375,2000);
+   }
+}
+
+.p-table__th[data-bg="#FF9800"],
+.p-table__th[data-bg="#4CAF50"] {
+  color: #FFF; // 料金と特典のフォントを白に
+}

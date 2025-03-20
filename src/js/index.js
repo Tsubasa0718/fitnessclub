@@ -1,0 +1,12 @@
+// scssファイル
+import "../scss/style.scss";
+// jsファイル
+import "./menu.js";
+import "./searchbar.js"
+import "./slide.js";
+import "./carousel.js";
+import "./accordion.js";
+import "./tab.js";
+import "./validation.js";
+import "./modal.js";
+import "./trainer.js";

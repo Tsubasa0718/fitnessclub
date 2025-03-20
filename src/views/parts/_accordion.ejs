@@ -1,0 +1,31 @@
+<div class="p-accordion-body">
+  <div class="p-accordion">
+      <% accordion.forEach((item, index)=>{ %>
+        <div class="p-accordion__item">
+          <button
+           type="button"
+           class="p-accordion__btn"
+           id="accordion-btn-<%= index %>"
+           tabindex="0"
+           aria-expanded="false"
+           aria-controls="accordion-content-<%= index %>">
+           <span class="p-accordion__btn-wrapper">
+            <span class="p-accordion__question-mark">Q</span>
+            <%= item.question %>
+           </span>
+           <span class="c-icon-plus--accordion"></span>
+          </button>
+
+          <div id="accordion-content-<%= index %>" class="p-accordion__content"
+               aria-hidden="true"
+               aria-labelledby="accordion-btn-<%= index %>"
+               aria-live="polite">
+              <div class="p-accordion__content-inner">
+                <span class="p-accordion__answer-mark">A</span>
+                <p class="p-accordion__text"><%= item.answer %></p>
+              </div>
+          </div>
+        </div>
+     <% }) %>
+  </div>
+</div>
